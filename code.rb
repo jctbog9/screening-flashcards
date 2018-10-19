@@ -34,6 +34,9 @@ while !validator.include?(randomizer)
 end
 
 separator
+puts "Press \"enter\" to reveal a flashcard answers"
+gets.chomp
+separator
 
 if study_session == "1" || study_session.downcase == "week 2"
   study_session = Week2.flashcards

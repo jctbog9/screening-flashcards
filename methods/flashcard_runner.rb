@@ -8,14 +8,17 @@ require './questions/all'
 require 'pry'
 
 def flashcard_runner(weeks)
-  flashcards = weeks.shuffle
-  flashcards.each do |card|
+  weeks.each do |card|
+    lines = card[:question].length
+    header = ""
+    lines.times do
+      header << "="
+    end
+    puts header
     puts card[:question]
     gets.chomp
     puts card[:answer]
     gets.chomp
-    puts '========================='
-    puts '========================='
   end
 
 end
