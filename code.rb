@@ -1,4 +1,6 @@
 require './methods/flashcard_runner'
+require './methods/ordered_cards'
+require './methods/ordered_or_random'
 
 require 'pry'
 
@@ -7,12 +9,15 @@ puts "1. Week 2 - HTTP\n2. Week 3 - React\n3. Week 4 - Advanced React\n4. Week 5
 
 print "> "
 study_session = gets.chomp
+puts "Would you like to randomize your cards? (y/n)"
+print "> "
+randomizer = gets.chomp
 puts
 puts
 
 if study_session == "1" || study_session.downcase == "week 2"
   study_session = Week2.flashcards
-  flashcard_runner(study_session)
+  flashcard_runner(ordered_or_random(randomizer, study_session))
 elsif study_session == "2" || study_session.downcase == "week 3"
   study_session = Week3.flashcards
   flashcard_runner(study_session)
