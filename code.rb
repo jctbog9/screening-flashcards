@@ -1,6 +1,4 @@
-require './methods/flashcard_runner'
-require './methods/ordered_cards'
-require './methods/ordered_or_random'
+require './methods/method_helper'
 
 require 'pry'
 
@@ -9,11 +7,33 @@ puts "1. Week 2 - HTTP\n2. Week 3 - React\n3. Week 4 - Advanced React\n4. Week 5
 
 print "> "
 study_session = gets.chomp
+
+week_validator = ["1", "2", "3", "4", "5", "week 2", "week 3", "week 4", "week 5", "week 6"]
+
+while !week_validator.include?(study_session.downcase)
+  separator
+  puts "I'm sorry that is not a correct response.\nPlease select a set of flashcards"
+  print "> "
+  study_session = gets.chomp
+end
+
+separator
+
 puts "Would you like to randomize your cards? (y/n)"
 print "> "
+
 randomizer = gets.chomp
-puts
-puts
+
+validator = ['y', 'n', 'yes', 'no']
+
+while !validator.include?(randomizer)
+  puts "I'm sorry that is not a valid input"
+  puts "Would you like to randomize your cards? (y/n)"
+  print "> "
+  randomizer = gets.chomp
+end
+
+separator
 
 if study_session == "1" || study_session.downcase == "week 2"
   study_session = Week2.flashcards
