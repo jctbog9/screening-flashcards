@@ -1,20 +1,20 @@
 # screening-flashcards
 
-#Installation
+# Installation
 
 ```
 git clone https://github.com/jctbog9/screening-flashcards.git
 ```
 
-#How To Run
+# How To Run
 
 Input `ruby code.rb` in your terminal from the root project directory.
 
-#Usage
+# Usage
 Press "Enter" to navigate through the flashcards and flip them over.
 
 
-#A bit on how this works
+# A bit on how this works
 While loops are used to track whether a user has inputted the correct data or not through the gets.chomp ruby method.
 When user inputs incorrect data they are thrown into the unending while loop until they correct their mistake.
 
